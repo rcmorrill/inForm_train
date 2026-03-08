@@ -80,22 +80,31 @@
 
 <nav>
   <h1>inFORM</h1>
-  <button class="active" onclick="show('extra/visualization_7.html', this)">
+  <button class="active" onclick="show('extra/visualization_overview.html', this)">
+    Overview
+    <span class="label">avg pay by department</span>
+  </button>
+  <button onclick="show('extra/visualization_7.html', this)">
     Cluster Bubbles
     <span class="label">packed circles by dept</span>
-  </button>
-  <button onclick="show('extra/visualization_9.html', this)">
-    Dot Histogram
-    <span class="label">stacked income dist</span>
   </button>
   <button onclick="show('extra/visualization_10.html', this)">
     Column Bars
     <span class="label">packed column layout</span>
   </button>
+  <button onclick="show('extra/visualization_9.html', this)">
+    Dot Histogram
+    <span class="label">stacked income dist</span>
+  </button>
+  <div style="flex:1"></div>
+  <a href="story/index.html" style="display:block;padding:14px 24px;font-family:'Courier New',monospace;font-size:13px;color:rgb(90,95,80);text-decoration:none;border-top:1px solid rgba(90,95,80,0.12);line-height:1.4;">
+    Scrollytelling
+    <span class="label" style="display:block;font-size:12px;opacity:0.55;margin-top:2px;">the full narrative</span>
+  </a>
 </nav>
 
 <main>
-  <iframe id="viz-frame" src="extra/visualization_7.html"></iframe>
+  <iframe id="viz-frame" src="extra/visualization_overview.html"></iframe>
 </main>
 
 <script>
