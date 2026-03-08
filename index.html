@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>inFORM — Boston Payroll Visualizations</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; overflow: hidden; }
+  body {
+    background: rgb(229,236,233);
+    font-family: 'Courier New', monospace;
+    color: rgb(90,95,80);
+    display: flex;
+  }
+
+  /* Left navigation */
+  nav {
+    width: 220px;
+    min-width: 220px;
+    background: rgba(90,95,80,0.06);
+    border-right: 1px solid rgba(90,95,80,0.15);
+    display: flex;
+    flex-direction: column;
+    padding: 32px 0;
+  }
+  nav h1 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0 24px 24px;
+    border-bottom: 1px solid rgba(90,95,80,0.12);
+    margin-bottom: 8px;
+  }
+  nav button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 14px 24px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: rgb(90,95,80);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s;
+    line-height: 1.4;
+  }
+  nav button:hover {
+    background: rgba(90,95,80,0.08);
+  }
+  nav button.active {
+    background: rgba(90,95,80,0.14);
+    font-weight: 700;
+  }
+  nav button .label {
+    display: block;
+    font-size: 12px;
+    opacity: 0.55;
+    margin-top: 2px;
+    font-weight: 400;
+  }
+
+  /* Main content area */
+  main {
+    flex: 1;
+    position: relative;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <h1>inFORM</h1>
+  <button class="active" onclick="show('extra/visualization_7.html', this)">
+    Cluster Bubbles
+    <span class="label">packed circles by dept</span>
+  </button>
+  <button onclick="show('extra/visualization_9.html', this)">
+    Dot Histogram
+    <span class="label">stacked income dist</span>
+  </button>
+  <button onclick="show('extra/visualization_10.html', this)">
+    Column Bars
+    <span class="label">packed column layout</span>
+  </button>
+</nav>
+
+<main>
+  <iframe id="viz-frame" src="extra/visualization_7.html"></iframe>
+</main>
+
+<script>
+function show(src, btn) {
+  document.getElementById('viz-frame').src = src;
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>
